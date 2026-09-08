@@ -20,7 +20,10 @@ func New(cfg config.Config, idx *index.Index) *Server {
 		cfg:   cfg,
 		index: idx,
 	}
-	s.mcp = mcp.NewServer(&mcp.Implementation{Name: "lazy-skill", Version: "1.0.0"}, nil)
+	s.mcp = mcp.NewServer(&mcp.Implementation{
+		Name:    "lazy-skill",
+		Version: "1.0.0",
+	}, nil)
 
 	registerTools(s)
 	registerResources(s)
